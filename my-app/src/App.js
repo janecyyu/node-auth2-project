@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import Users from "./components/Users";
 import Signup from "./components/Signup";
+import Logout from "./components/Logout";
 
 import { Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -21,11 +22,14 @@ function App() {
       </Link>
       <br />
       <Link className="users-btn" to="/users">
-        all users
+        User list
       </Link>
+      <br />
+      <Link to="/logout">Logout</Link>
       <div className="App">
         <Route exact path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <PrivateRoute path="/users" component={Users} />
       </div>
     </Router>

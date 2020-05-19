@@ -18,7 +18,7 @@ function Login() {
       .post("http://localhost:5006/api/login", logInData)
       .then((res) => {
         console.log(res.data);
-        window.localStorage.setItem("token", res.data.token);
+        window.localStorage.setItem("token", res.data.yourToken);
         setLogInData({ username: "", password: "" });
         push("/users");
       })

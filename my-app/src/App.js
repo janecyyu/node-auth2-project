@@ -7,6 +7,7 @@ import Signup from "./components/Signup";
 import { Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
       <div className="App">
         <Route exact path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
-        <Route path="/users" component={Users} />
+        <PrivateRoute path="/users" component={Users} />
       </div>
     </Router>
   );

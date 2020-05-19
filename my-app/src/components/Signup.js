@@ -14,7 +14,6 @@ function SignUp() {
       ...signUpData,
       [event.target.name]: event.target.value,
     });
-    //console.log(signUpData);
   };
 
   const handleSubmit = (e) => {
@@ -23,9 +22,8 @@ function SignUp() {
       .post("http://localhost:5006/api/register", signUpData)
       .then((res) => {
         console.log("sign up successfully");
-        console.log(res.data.token);
         window.localStorage.setItem("token", res.data.token);
-        //push("/users");
+        push("/users");
       })
       .catch((err) => console.log({ err }));
   };

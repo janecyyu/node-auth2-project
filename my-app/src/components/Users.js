@@ -2,11 +2,16 @@ import React, { useEffect } from "react";
 import axios from "axios";
 
 function Users() {
+  const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://localhost:5006/api/users")
+      .get("http://localhost:5006/api/users", {
+        headers: {
+          authorization: token,
+        },
+      })
       .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(token));
   }, []);
   return (
     <div>

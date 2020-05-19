@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Link className="sign-btn" to="/">
+      <Link className="sign-btn" to="/signup">
         Sign Up
       </Link>
       <br />
@@ -23,7 +23,7 @@ function App() {
         all users
       </Link>
       <div className="App">
-        <Route exact path="/" component={Signup} />
+        <Route exact path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
         <Route path="/users" component={Users} />
       </div>
